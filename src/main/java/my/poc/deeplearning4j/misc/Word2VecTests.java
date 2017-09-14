@@ -1,9 +1,5 @@
 package my.poc.deeplearning4j.misc;
 
-import java.io.File;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import org.deeplearning4j.models.word2vec.VocabWord;
 import org.deeplearning4j.models.word2vec.Word2Vec;
 import org.deeplearning4j.text.sentenceiterator.FileSentenceIterator;
@@ -12,6 +8,10 @@ import org.deeplearning4j.text.tokenization.tokenizer.preprocessor.CommonPreproc
 import org.deeplearning4j.text.tokenization.tokenizerfactory.DefaultTokenizerFactory;
 import org.deeplearning4j.text.tokenization.tokenizerfactory.TokenizerFactory;
 import org.junit.Test;
+
+import java.io.File;
+import java.net.URL;
+import java.util.List;
 
 /**
  *
@@ -50,17 +50,8 @@ public class Word2VecTests {
                 System.out.println("Started on port " + server.getPort());*/
 
                 //vec.getLookupTable().getVocabCache().wordFrequency("monitor")
-                System.out.println(vec.wordsNearest("new", 10));
+                System.out.println(vec.wordsNearest("monitor", 10));
 
-                List<String> positive = new ArrayList<>();
-                positive.add("new");
-                positive.add("brand");
-                positive.add("excellent");
-
-                List<String> negative = new ArrayList<>();
-                negative.add("used");
-                negative.add("old");
-                negative.add("scratch");
 
 
                 for (VocabWord word : vec.getVocab().tokens()) {
